@@ -166,15 +166,13 @@
       font-weight: 600;
     }
 
-    /* ----- MAIN CONTENT ----- */
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 0 0 200px 0;
-    }
-
+ .main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 0 2rem 0;
+}
     .topbar {
       display: flex;
       align-items: center;
@@ -737,21 +735,20 @@
       color: white;
     }
 
-    /* ----- RESPONSIVE ----- */
-    .mobile-bottom-nav {
-      display: none;
-      position: fixed;
-      bottom: 130px;
-      left: 0;
-      right: 0;
-        background: var(--surface);  
-      border-top: 1px solid var(--border);;
-      padding: 0.4rem 0.5rem;
-      justify-content: space-around;
-      z-index: 50;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
-    }
-
+   .mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.4rem 0.5rem;
+  justify-content: space-around;
+  z-index: 50;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
     .mobile-nav-item {
       display: flex;
       flex-direction: column;
@@ -793,16 +790,45 @@
     transform: translateX(-100%);
     width: 280px;
     box-shadow: var(--shadow-lg);
+    z-index: 60;
     overflow-y: auto;
-    padding-bottom: 120px;   /* ⬅ extra space at the bottom so last items are reachable */
-    -webkit-overflow-scrolling: touch;  /* ⬅ smoother scroll on iOS */
+    padding-bottom: 120px;
+    -webkit-overflow-scrolling: touch;
   }
   .sidebar.open {
     transform: translateX(0);
   }
-  ...
+  .menu-toggle {
+    display: block;
+  }
+  .main-content {
+    padding-bottom: 200px;
+  }
+  .topbar {
+    padding: 0.6rem 1rem;
+  }
+  .role-switcher {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-container {
+    padding: 1rem;
+  }
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  .filter-bar {
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.8rem;
+  }
 }
-
 
     @media (max-width: 480px) {
       .stats-grid {
